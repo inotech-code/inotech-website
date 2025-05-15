@@ -8,6 +8,8 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
     <header class="main-header">
         <div class="container header-flex">
@@ -18,7 +20,7 @@
               <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
             </div>
           </div>
-          <nav>
+          <nav id="mainNav">
             <a href="about.html">会社概要</a>
             <a href="services.html">サービス内容</a>
             <a href="works.html">施工事例</a>
@@ -26,8 +28,13 @@
             <a href="blog.html">ブログ</a>
             <a href="contact.html">お問い合わせ</a>
           </nav>
+          <!-- ハンバーガーメニュー -->
+          <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </header>
+      
       
 
 <!-- ヒーローセクション -->
@@ -174,5 +181,206 @@
 <footer>
   <p>© 2025 株式会社Inotech All Rights Reserved.</p>
 </footer>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社Inotech | エアコン設置・洗浄・電気工事のプロ</title>
+  <meta name="description" content="エアコン設置・洗浄・電気工事・LAN工事など、株式会社Inotechは大阪を拠点に迅速・丁寧なサービスを提供しています。豊富な実績と高い顧客満足度で選ばれるプロフェッショナル集団です。">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<script>
+    // ハンバーガーメニュー開閉
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+    // メニュークリックで自動的に閉じる
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+      });
+    });
+  </script>
+  
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+          <div class="logo-area">
+            <span class="logo-mark">INO</span>
+            <div class="logo-text">
+              <span class="logo-main">株式会社Inotech</span>
+              <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
+            </div>
+          </div>
+          <nav id="mainNav">
+            <a href="about.html">会社概要</a>
+            <a href="services.html">サービス内容</a>
+            <a href="works.html">施工事例</a>
+            <a href="reviews.html">お客様の声</a>
+            <a href="blog.html">ブログ</a>
+            <a href="contact.html">お問い合わせ</a>
+          </nav>
+          <!-- ハンバーガーメニュー -->
+          <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+      
+      
+
+<!-- ヒーローセクション -->
+<section class="hero modern-hero">
+  <img class="hero-bgimg" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1600&q=80" alt="エアコン設置現場">
+  <div class="modern-hero-overlay">
+    <h2 class="modern-hero-title">技術と信頼で<br>快適な空間をお届けします</h2>
+    <p class="modern-hero-desc">
+      エアコン設置・洗浄・電気工事・LAN工事のプロフェッショナル<br>
+      <span style="font-size:1.08em;">大阪・関西エリア対応</span>
+    </p>
+    <a class="btn hero-btn" href="contact.html">無料見積もり・ご相談はこちら</a>
+  </div>
+</section>
+
+<!-- 会社の特徴セクション -->
+<section class="section bg-light">
+  <div class="container">
+    <h2>Inotechが選ばれる理由</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <img src="https://cdn.pixabay.com/photo/2017/03/01/01/14/achievement-2107525_1280.png" alt="技術力アイコン" class="feature-icon">
+        <h3>高い技術力</h3>
+        <p>国家資格保有者が在籍し、どんな現場にも柔軟に対応。業務用から家庭用まで豊富な経験。</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/checklist-1295319_1280.png" alt="スピード対応アイコン" class="feature-icon">
+        <h3>スピード対応</h3>
+        <p>お急ぎの場合も即日対応可能。現地調査から施工・アフターフォローまでワンストップ。</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn.pixabay.com/photo/2013/07/12/13/57/money-147418_1280.png" alt="安心価格アイコン" class="feature-icon">
+        <h3>安心価格</h3>
+        <p>事前見積りで明朗会計。追加費用なしの安心プランをご提供。</p>
+      </div>
+      <div class="feature">
+        <img src="https://cdn.pixabay.com/photo/2014/04/03/10/32/medal-312619_1280.png" alt="豊富な実績アイコン" class="feature-icon">
+        <h3>豊富な実績</h3>
+        <p>オフィス・店舗・施設・住宅など年間300件以上の施工実績。多数のリピーター様にご利用いただいています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- サービス案内（画像つき） -->
+<section class="section">
+  <div class="container">
+    <h2>主なサービス内容</h2>
+    <div class="services-grid">
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="エアコン設置イメージ" class="service-img">
+        <h3>エアコン設置工事</h3>
+        <p>最新モデルから業務用まで幅広く対応。効率・美観にもこだわります。</p>
+        <a href="services.html" class="btn btn-sm">詳細を見る</a>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80" alt="エアコン洗浄イメージ" class="service-img">
+        <h3>エアコン洗浄・メンテナンス</h3>
+        <p>カビ・ほこり・臭いを徹底除去。快適な空気環境へ。</p>
+        <a href="services.html" class="btn btn-sm">詳細を見る</a>
+      </div>
+      <div class="service">
+        <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=400&q=80" alt="電気設備・LAN工事イメージ" class="service-img">
+        <h3>電気設備・LAN工事</h3>
+        <p>照明・分電盤・ネットワーク工事もワンストップで。</p>
+        <a href="services.html" class="btn btn-sm">詳細を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 施工事例ピックアップ -->
+<section class="section bg-light">
+  <div class="container">
+    <h2>施工事例のご紹介</h2>
+    <div class="works-pickup">
+      <div class="work-item">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=350&q=80" alt="オフィスビル・大型エアコン設置">
+        <div>
+          <h3>オフィスビル・大型エアコン設置</h3>
+          <p>高層オフィスビルでの大規模設置工事を短納期で完了。</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=350&q=80" alt="飲食店エアコン洗浄">
+        <div>
+          <h3>飲食店・エアコン洗浄</h3>
+          <p>油汚れや臭いも徹底分解洗浄。プロの技術で快適空間。</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=350&q=80" alt="住宅電気配線工事">
+        <div>
+          <h3>住宅・電気配線リニューアル</h3>
+          <p>老朽化配線の更新で安全＆省エネ住宅に。</p>
+        </div>
+      </div>
+    </div>
+    <a href="works.html" class="btn">他の事例も見る</a>
+  </div>
+</section>
+
+<!-- お客様の声ピックアップ（画像つき） -->
+<section class="section">
+  <div class="container">
+    <h2>お客様の声</h2>
+    <div class="reviews-pickup">
+      <div class="review-item">
+        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="お客様アイコン" class="review-avatar">
+        <h3>「親切・丁寧な対応で安心でした」</h3>
+        <p>工事前の説明からアフターフォローまで丁寧に対応いただき、家族全員安心して利用できました。<span class="reviewer">（大阪市・S様）</span></p>
+      </div>
+      <div class="review-item">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="お客様アイコン" class="review-avatar">
+        <h3>「店舗の空気が生まれ変わった！」</h3>
+        <p>油っぽかった空気が本当に変わり、お客様にも好評です。<span class="reviewer">（京都市・飲食店オーナー様）</span></p>
+      </div>
+    </div>
+    <a href="reviews.html" class="btn btn-sm">他の声も見る</a>
+  </div>
+</section>
+
+<!-- Q&Aセクション -->
+<section class="section bg-light">
+  <div class="container">
+    <h2>よくあるご質問</h2>
+    <div style="max-width:480px;margin:0 auto 18px auto;">
+      <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=600&q=80" alt="Q&Aイメージ" style="width:100%;height:130px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.09);margin-bottom:20px;">
+    </div>
+    <dl class="faq-list">
+      <dt>Q. 見積もりや現地調査は無料ですか？</dt>
+      <dd>A. はい、無料で対応しております。お気軽にご相談ください。</dd>
+      <dt>Q. 急ぎの場合、対応してもらえますか？</dt>
+      <dd>A. 即日対応可能です。ご希望日時をお伝えください。</dd>
+      <dt>Q. 土日祝や夜間工事はできますか？</dt>
+      <dd>A. 可能です。事前にご相談ください。</dd>
+      <dt>Q. アフターフォローもありますか？</dt>
+      <dd>A. はい、工事後もお困りごとに迅速に対応します。</dd>
+    </dl>
+    <a href="contact.html" class="btn btn-sm">お問い合わせはこちら</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 株式会社Inotech All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+
 </body>
 </html>
