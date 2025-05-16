@@ -6,44 +6,161 @@
   <title>お問い合わせ | 株式会社Inotech</title>
   <meta name="description" content="株式会社Inotechへのお問い合わせはこちらから。お見積り・ご相談・ご依頼などお気軽にご連絡ください。">
   <link href="css/styles.css" rel="stylesheet">
+  <style>
+    /* 上質な淡いグラデーション背景 */
+    body {
+      background: linear-gradient(120deg, #f7fcff 0%, #e2f2fa 80%, #f6faff 100%);
+    }
+    /* お問い合わせカード型 */
+    .contact-card {
+      background: linear-gradient(135deg, #fafdff 80%, #e9f3fc 100%);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px 0 rgba(14,85,130,0.09), 0 1.5px 8px rgba(32,90,140,0.06);
+      padding: 38px 32px 28px 32px;
+      max-width: 480px;
+      margin: 0 auto 28px auto;
+      border: 1.5px solid #e6f1fa;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 0.7s;
+    }
+    @media (max-width: 600px) {
+      .contact-card { padding: 18px 6vw 15px 6vw; }
+    }
+    /* 見出し下のイメージ */
+    .contact-img-top {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 13px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      margin-bottom: 18px;
+      margin-top: -7px;
+    }
+    /* 入力フォーム */
+    .contact-form label {
+      font-weight: 600;
+      color: #136ebd;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+      display: inline-block;
+      font-size: 1.03em;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 14px;
+      margin-top: 5px;
+      margin-bottom: 12px;
+      border: 1.4px solid #dbeafe;
+      border-radius: 9px;
+      background: #f9fcff;
+      font-size: 1.06em;
+      box-shadow: 0 1px 7px rgba(22,80,150,0.05);
+      transition: border 0.23s, box-shadow 0.23s;
+      outline: none;
+      resize: vertical;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1.4px solid #00aaff;
+      background: #f4fbff;
+      box-shadow: 0 2px 14px 0 rgba(0,90,200,0.10);
+    }
+    .contact-form textarea {
+      min-height: 90px;
+      max-height: 230px;
+      font-size: 1.04em;
+    }
+    /* 送信ボタン */
+    .contact-form .btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #22acec 0%, #1580b9 100%);
+      color: #fff;
+      border-radius: 24px;
+      font-size: 1.08rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      padding: 15px 0;
+      box-shadow: 0 4px 18px rgba(44,160,230,0.11);
+      border: none;
+      cursor: pointer;
+      margin-top: 4px;
+      margin-bottom: 7px;
+      transition: background 0.23s, box-shadow 0.22s, transform 0.11s;
+    }
+    .contact-form .btn:hover, .contact-form .btn:focus {
+      background: linear-gradient(90deg, #1580b9 0%, #22acec 100%);
+      box-shadow: 0 8px 30px rgba(34,172,236,0.15), 0 1px 5px rgba(20,90,140,0.11);
+      color: #fff;
+      transform: translateY(-2px) scale(1.03);
+      outline: none;
+    }
+    /* メモや注意書き */
+    .contact-note {
+      text-align: center;
+      font-size: 1.03em;
+      color: #3486bb;
+      margin-top: 18px;
+      background: #f6fbff;
+      border-radius: 8px;
+      padding: 11px 12px;
+      box-shadow: 0 1.5px 5px rgba(32,120,180,0.07);
+      border: 1px solid #e4f1fa;
+      max-width: 430px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* フェードイン演出 */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(25px) scale(0.98);}
+      100% { opacity: 1; transform: none;}
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1 class="logo">株式会社Inotech</h1>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="about.html">会社概要</a>
-      <a href="services.html">サービス内容</a>
-      <a href="works.html">施工事例</a>
-      <a href="reviews.html">お客様の声</a>
-      <a href="blog.html">ブログ</a>
-    </nav>
-  </div>
-</header>
-
+    <header class="main-header">
+        <div class="container header-flex">
+          <div class="logo-area">
+            <span class="logo-mark">INO</span>
+            <div class="logo-text">
+              <span class="logo-main">株式会社Inotech</span>
+              <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
+            </div>
+          </div>
+          <button class="nav-toggle super-premium" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
+          <nav id="mainNav">
+            <a href="index.html">トップ</a>
+            <a href="about.html">会社概要</a>
+            <a href="services.html">サービス内容</a>
+            <a href="works.html">施工事例</a>
+            <a href="reviews.html">お客様の声</a>
+            <a href="blog.html">ブログ</a>
+            <a href="contact.html">お問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+      
 
 <section class="section">
   <div class="container">
     <h2>お問い合わせ</h2>
-    <div style="max-width:440px;margin:0 auto 24px auto;">
-      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="お問い合わせイメージ" style="width:100%;height:100px;object-fit:cover;border-radius:10px;box-shadow:0 1px 5px rgba(0,0,0,0.08);margin-bottom:14px;">
+    <div class="contact-card">
+      <img class="contact-img-top" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="お問い合わせイメージ">
+      <form action="#" method="post" class="contact-form">
+        <label for="name">お名前</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">お問い合わせ内容</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit" class="btn">送信</button>
+      </form>
     </div>
-    <form action="#" method="post" class="contact-form" style="max-width:480px;margin:0 auto;">
-      <div style="margin-bottom:14px;">
-        <label for="name">お名前</label><br>
-        <input type="text" id="name" name="name" required style="width:100%;padding:8px 10px;">
-      </div>
-      <div style="margin-bottom:14px;">
-        <label for="email">メールアドレス</label><br>
-        <input type="email" id="email" name="email" required style="width:100%;padding:8px 10px;">
-      </div>
-      <div style="margin-bottom:14px;">
-        <label for="message">お問い合わせ内容</label><br>
-        <textarea id="message" name="message" rows="5" required style="width:100%;padding:8px 10px;"></textarea>
-      </div>
-      <button type="submit" class="btn">送信</button>
-    </form>
     <div class="contact-note">※ お急ぎの場合はお電話（06-1234-5678）でも承ります。</div>
   </div>
 </section>
@@ -51,5 +168,19 @@
 <footer>
   <p>© 2025 株式会社Inotech All Rights Reserved.</p>
 </footer>
+<script>
+    // ハンバーガーメニュー開閉
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+    // メニュークリックで自動的に閉じる
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+      });
+    });
+</script>
 </body>
 </html>
