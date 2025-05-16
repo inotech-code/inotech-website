@@ -20,6 +20,10 @@
               <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
             </div>
           </div>
+          <!-- ハンバーガーメニューを右上絶妙配置 -->
+          <button class="nav-toggle super-premium" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
           <nav id="mainNav">
             <a href="about.html">会社概要</a>
             <a href="services.html">サービス内容</a>
@@ -28,12 +32,9 @@
             <a href="blog.html">ブログ</a>
             <a href="contact.html">お問い合わせ</a>
           </nav>
-          <!-- ハンバーガーメニュー -->
-          <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
-            <span></span><span></span><span></span>
-          </button>
         </div>
       </header>
+      
       
       
 
@@ -185,16 +186,27 @@
 <script>
     // ハンバーガーメニュー開閉
     const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('open');
-    });
-    // メニュークリックで自動的に閉じる
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-      });
-    });
+const mainNav = document.getElementById('mainNav');
+const navOverlay = document.getElementById('navOverlay');
+
+navToggle.addEventListener('click', () => {
+  mainNav.classList.toggle('open');
+  navOverlay.classList.toggle('active');
+});
+
+navOverlay.addEventListener('click', () => {
+  mainNav.classList.remove('open');
+  navOverlay.classList.remove('active');
+});
+
+// メニュー内リンククリックで自動的に閉じる
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    navOverlay.classList.remove('active');
+  });
+});
+
   </script>
   
 </body>
