@@ -6,22 +6,133 @@
   <title>会社概要 | 株式会社Inotech</title>
   <meta name="description" content="株式会社Inotechの会社概要・沿革・アクセスをご紹介。大阪を拠点に空調・電気・消防設備のプロフェッショナル集団です。">
   <link href="css/styles.css" rel="stylesheet">
+
+  <!-- ページ専用：会社概要カード＆隠れサーファーのCSS -->
+  <style>
+    body {
+      background: linear-gradient(120deg, #f7fcff 0%, #e2f2fa 80%, #f6faff 100%);
+    }
+    .company-info {
+      background: linear-gradient(135deg, #fafdff 94%, #e6f0fa 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 18px 0 rgba(20,100,180,0.08), 0 1.5px 8px rgba(30,90,140,0.06);
+      margin: 0 auto 30px auto;
+      padding: 32px 24px 18px 24px;
+      max-width: 520px;
+      width: 100%;
+      border: 1.2px solid #eaf4fd;
+      font-size: 1.06em;
+      animation: fadeIn 0.8s;
+    }
+    .company-info th {
+      text-align: left;
+      color: #1578b9;
+      font-weight: 700;
+      width: 110px;
+      padding: 11px 8px 10px 0;
+      background: none;
+      border: none;
+      font-size: 1em;
+      letter-spacing: 0.02em;
+    }
+    .company-info td {
+      color: #244066;
+      padding: 11px 0 10px 4px;
+      background: none;
+      border: none;
+      font-size: 1em;
+      letter-spacing: 0.01em;
+    }
+    .company-info tr {
+      border-bottom: 1px solid #eaf4fd;
+    }
+    .company-info tr:last-child {
+      border-bottom: none;
+    }
+    @media (max-width: 600px) {
+      .company-info {
+        padding: 17px 4vw 10px 4vw;
+        border-radius: 10px;
+        font-size: 1em;
+      }
+      .company-info th,
+      .company-info td {
+        display: block;
+        width: 100%;
+        padding: 9px 0 4px 2px;
+      }
+      .company-info tr {
+        display: block;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #eaf4fd;
+      }
+    }
+    h2 {
+      margin-bottom: 26px;
+    }
+    h3 {
+      margin-top: 36px;
+      margin-bottom: 14px;
+      font-size: 1.14em;
+      color: #1976d2;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(22px) scale(0.98);}
+      100% { opacity: 1; transform: none;}
+    }
+    .hidden-surfer {
+  position: fixed;
+  right: 18px;
+  bottom: 14px;
+  width: 68px;
+  height: 54px;
+  opacity: 0.22;
+  z-index: 40;
+  pointer-events: none;
+  transition: opacity 0.22s;
+  filter: blur(0.01px);
+  animation: surferfloat 4.1s ease-in-out infinite;
+}
+.hidden-surfer:hover { opacity: 0.5; }
+.hidden-surfer svg { width: 100%; height: 100%; }
+@keyframes surferfloat {
+  0%, 100% { transform: translateY(0);}
+  22% { transform: translateY(-7px);}
+  44% { transform: translateY(-12px);}
+  74% { transform: translateY(2px);}
+}
+@media (max-width: 700px) {
+  .hidden-surfer { width: 42px; height: 32px; right: 2vw; bottom: 9vw; }
+}
+
+  </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1 class="logo">株式会社Inotech</h1>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="services.html">サービス内容</a>
-      <a href="works.html">施工事例</a>
-      <a href="reviews.html">お客様の声</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
-
+    <header class="main-header">
+        <div class="container header-flex">
+          <div class="logo-area">
+            <span class="logo-mark">INO</span>
+            <div class="logo-text">
+              <span class="logo-main">株式会社Inotech</span>
+              <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
+            </div>
+          </div>
+          <button class="nav-toggle super-premium" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
+          <nav id="mainNav">
+            <a href="index.html">トップ</a>
+            <a href="services.html">サービス内容</a>
+            <a href="works.html">施工事例</a>
+            <a href="reviews.html">お客様の声</a>
+            <a href="blog.html">ブログ</a>
+            <a href="contact.html">お問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+      
 
 <section class="section">
   <div class="container">
@@ -85,5 +196,26 @@
 <footer>
   <p>© 2025 株式会社Inotech All Rights Reserved.</p>
 </footer>
+<script>
+    // ハンバーガーメニュー開閉
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+    // メニュークリックで自動的に閉じる
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+      });
+    });
+</script>
+
+<div class="hidden-surfer">
+    <img src="images/surfer-character.png" alt="隠れサーファー" />
+  </div>
+  
+  
+
 </body>
 </html>
