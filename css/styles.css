@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Noto Sans JP', sans-serif;
   color: #333;
@@ -496,4 +495,833 @@ footer {
       flex-wrap: wrap;
     }
   }
+  @media (max-width: 600px) {
+    .company-info {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      font-size: 0.98em;
+    }
+    .company-info th,
+    .company-info td {
+      display: block;
+      width: auto;
+      text-align: left;
+      padding: 8px 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .company-info th {
+      font-weight: bold;
+      background: none;
+      color: #222;
+      padding-top: 16px;
+      border-bottom: none;
+    }
+    .company-info tr {
+      display: block;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+  }
   
+  /* --- グローバルナビゲーションのスマホ最適化 --- */
+@media (max-width: 700px) {
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-start;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    nav a {
+      font-size: 1rem;
+      padding: 6px 7px 4px 7px;
+      white-space: nowrap;
+      border-radius: 6px;
+      color: #136ebd;
+      background: #eaf4fd;
+      margin-bottom: 4px;
+      text-decoration: underline;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:active,
+    nav a:focus {
+      background: #bfdfff;
+      color: #045f99;
+    }
+  }
+  
+  /* --- ヘッダー・h1・セクションタイトル周り余白調整 --- */
+  @media (max-width: 700px) {
+    .container {
+      padding: 0 7px;
+    }
+    h1, .logo, .logo-main {
+      font-size: 1.5rem !important;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      word-break: keep-all;
+      letter-spacing: 0.01em;
+    }
+    .section h2, h2 {
+      font-size: 1.1rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+  }
+  
+  /* --- 画像のレスポンシブ対応徹底 --- */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    margin: 0 auto 16px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  
+  /* --- セクション（フォーム等）の余白調整 --- */
+  @media (max-width: 700px) {
+    section,
+    .section {
+      padding: 18px 2vw !important;
+      margin-bottom: 18px;
+    }
+    form {
+      padding: 0 2vw;
+    }
+  }
+  
+  /* --- フォーム要素の見やすさ・幅改善 --- */
+  @media (max-width: 700px) {
+    input, textarea, button {
+      font-size: 1.04rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button[type="submit"], .btn, .hero-btn {
+      width: 96%;
+      min-width: 130px;
+      margin: 10px auto 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      display: block;
+    }
+  }
+  
+  /* --- 会社情報テーブルをスマホで見やすく --- */
+  @media (max-width: 700px) {
+    .company-info th,
+    .company-info td {
+      padding: 10px 4px !important;
+      font-size: 1rem;
+      width: 100%;
+      display: block;
+    }
+    .company-info tr {
+      margin-bottom: 6px;
+      display: block;
+      border-bottom: 1px solid #f1f1f1;
+    }
+  }
+  
+  /* --- 各種リストやブログカード横並び→縦並び --- */
+  @media (max-width: 700px) {
+    .blog-list, .blog-card-list, .features-grid, .reviews-pickup, .works-pickup, .services-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 18px !important;
+      align-items: stretch !important;
+    }
+    .blog-item, .review-item, .work-item, .service {
+      width: 100% !important;
+      min-width: unset !important;
+      max-width: 98vw !important;
+    }
+  }
+  
+  /* --- フッターを画面幅にあわせてリサイズ --- */
+  footer {
+    font-size: 0.92em;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  
+  /* --- ハンバーガーメニュー展開時のナビリスト スマホ用リセット --- */
+@media (max-width: 800px) {
+    .main-header nav,
+    nav.open {
+      background: linear-gradient(90deg, #18222a 90%, #22506e 100%);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      border-radius: 0 0 0 18px;
+      padding: 16px 12px 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .main-header nav a,
+    nav.open a {
+      background: none !important;
+      color: #fff !important;
+      font-size: 1.19rem !important;
+      border-radius: 8px !important;
+      padding: 12px 12px 10px 14px !important;
+      margin: 0 !important;
+      text-align: left;
+      box-shadow: none !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      border: none !important;
+      transition: background 0.2s, color 0.2s;
+      opacity: 1 !important;
+    }
+    .main-header nav a:active,
+    .main-header nav a:focus,
+    nav.open a:active,
+    nav.open a:focus {
+      background: rgba(0,160,255,0.18) !important;
+      color: #fff !important;
+    }
+  }
+
+  /* ---- 通常グローバルナビ（スマホ時）をシンプルなテキストリンクだけに ---- */
+@media (max-width: 700px) {
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      justify-content: flex-start;
+      margin-bottom: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      background: none !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    nav a {
+      font-size: 1.09rem !important;
+      padding: 3px 4px !important;
+      border-radius: 0 !important;
+      color: #1976d2 !important;
+      background: none !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      text-decoration: underline !important;
+      font-weight: 500 !important;
+      transition: color 0.18s;
+      display: inline;
+    }
+    nav a:active,
+    nav a:focus {
+      color: #0d3b66 !important;
+      background: none !important;
+    }
+  }
+  
+  /* --- ハンバーガーメニュー開いた時だけ（nav.openなどにopenクラスがつくなら） --- */
+  @media (max-width: 800px) {
+    nav.open,
+    .main-header nav.open {
+      background: linear-gradient(90deg, #18222a 90%, #22506e 100%);
+      border-radius: 0 0 0 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      padding: 18px 14px 24px 18px;
+      flex-direction: column !important;
+      gap: 13px !important;
+      align-items: flex-start !important;
+    }
+    nav.open a,
+    .main-header nav.open a {
+      color: #fff !important;
+      font-size: 1.13rem !important;
+      background: none !important;
+      padding: 13px 10px 11px 12px !important;
+      border-radius: 7px !important;
+      margin: 0 !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      display: block !important;
+    }
+    nav.open a:active,
+    nav.open a:focus,
+    .main-header nav.open a:active,
+    .main-header nav.open a:focus {
+      background: rgba(0,160,255,0.14) !important;
+      color: #fff !important;
+    }
+  }
+  
+  /* PC・タブレット: navは横並び（デフォルト） */
+.main-header nav {
+    display: flex;
+    gap: 20px;
+    background: none;
+    position: static;
+    box-shadow: none;
+    width: auto;
+    max-width: none;
+    padding: 0;
+  }
+  
+  /* スマホ: ハンバーガーが見える、navは非表示 */
+  @media (max-width: 800px) {
+    .menu-toggle, .nav-toggle {
+      display: flex !important;
+    }
+    .main-header nav {
+      display: none !important;
+    }
+    .main-header nav.open {
+      display: flex !important;
+      flex-direction: column !important;
+      position: fixed !important;
+      top: 58px !important;
+      right: 0 !important;
+      width: 220px !important;
+      max-width: 80vw !important;
+      background: linear-gradient(90deg, #18222a 90%, #22506e 100%) !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+      border-radius: 0 0 0 18px !important;
+      z-index: 999 !important;
+      gap: 0 !important;
+      padding: 18px 12px 20px 18px !important;
+    }
+    .main-header nav.open a {
+      color: #fff !important;
+      display: block !important;
+      font-size: 1.13rem !important;
+      background: none !important;
+      border-radius: 7px !important;
+      padding: 13px 10px 11px 12px !important;
+      margin: 0 !important;
+      text-align: left !important;
+      font-weight: 500 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 1 !important;
+      white-space: nowrap !important;
+    }
+    .main-header nav.open a:active,
+    .main-header nav.open a:focus {
+      background: rgba(0,160,255,0.18) !important;
+      color: #fff !important;
+    }
+  }
+  
+  /* スマホ: nav.open以外は完全に消える（下への押し出しも起きない） */
+  @media (max-width: 800px) {
+    .main-header nav:not(.open) {
+      display: none !important;
+    }
+  }
+  
+  /* PC時（801px以上）nav常に表示・縦重なり/重なり一切なし */
+  @media (min-width: 801px) {
+    .main-header nav {
+      display: flex !important;
+      position: static !important;
+      background: none !important;
+      width: auto !important;
+      max-width: none !important;
+      box-shadow: none !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 20px !important;
+      padding: 0 !important;
+      z-index: 1 !important;
+    }
+    .main-header nav a {
+      color: #e2f1ff !important;
+      padding: 8px 12px 5px 12px !important;
+      background: none !important;
+      font-size: 1.02rem !important;
+      border-radius: 5px 5px 0 0 !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      transition: color 0.3s, background 0.25s !important;
+      position: relative !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      display: inline-block !important;
+    }
+  }
+  
+  /* ======== ハンバーガーメニュー高級感＆完全競合排除ver ======== */
+@media (max-width: 800px) {
+    /* ハンバーガーだけ表示 */
+    .menu-toggle,
+    .nav-toggle { display: flex !important; }
+  
+    /* navは非表示、open時だけアニメ付きで出現 */
+    .main-header nav {
+      display: none !important;
+      position: fixed !important;
+      top: 0; right: 0;
+      width: 80vw; max-width: 340px;
+      height: 100vh;
+      background: rgba(30,40,60,0.98);
+      backdrop-filter: blur(8px) saturate(170%);
+      box-shadow: -14px 0 40px 0 rgba(0,0,0,0.26);
+      border-radius: 0 0 0 26px;
+      z-index: 999;
+      padding: 38px 20px 28px 22px;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      transform: translateX(120%);
+      pointer-events: none;
+      transition: transform 0.5s cubic-bezier(.33,.9,.22,1.1), opacity 0.33s;
+    }
+    .main-header nav.open {
+      display: flex !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: translateX(0) !important;
+    }
+    .main-header nav a {
+      color: #fff !important;
+      display: block !important;
+      font-size: 1.13rem !important;
+      background: none !important;
+      border-radius: 12px !important;
+      padding: 15px 15px 13px 20px !important;
+      margin: 0 0 10px 0 !important;
+      text-align: left !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.03em !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0.98 !important;
+      white-space: nowrap !important;
+      transition: background 0.19s, color 0.19s;
+    }
+    .main-header nav a:active,
+    .main-header nav a:focus {
+      background: linear-gradient(90deg, #0090c5 25%, #22506e 100%) !important;
+      color: #fff !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  /* ======== 801px以上（PC）は常時横並び・崩れ防止 ======== */
+  @media (min-width: 801px) {
+    .main-header nav {
+      display: flex !important;
+      position: static !important;
+      background: none !important;
+      width: auto !important;
+      max-width: none !important;
+      box-shadow: none !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 20px !important;
+      padding: 0 !important;
+      z-index: 1 !important;
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto !important;
+    }
+    .main-header nav a {
+      color: #e2f1ff !important;
+      padding: 8px 12px 5px 12px !important;
+      background: none !important;
+      font-size: 1.02rem !important;
+      border-radius: 5px 5px 0 0 !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      display: inline-block !important;
+      white-space: normal !important;
+      transition: color 0.3s, background 0.25s !important;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .main-header nav {
+      /* 常時blockにしておきtransformで隠す。display: none;禁止！ */
+      display: block !important;
+      position: fixed !important;
+      top: 0; right: 0;
+      width: 82vw; max-width: 340px;
+      height: 100vh;
+      background: rgba(30,40,60,0.98);
+      backdrop-filter: blur(8px) saturate(170%);
+      box-shadow: -14px 0 40px 0 rgba(0,0,0,0.22);
+      border-radius: 0 0 0 26px;
+      z-index: 999;
+      padding: 38px 20px 28px 22px;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(.36,.66,.04,1), opacity 0.33s cubic-bezier(.36,.66,.04,1);
+    }
+    .main-header nav.open {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: translateX(0) !important;
+    }
+    .main-header nav a {
+      color: #fff !important;
+      display: block !important;
+      font-size: 1.13rem !important;
+      background: none !important;
+      border-radius: 12px !important;
+      padding: 15px 15px 13px 20px !important;
+      margin: 0 0 10px 0 !important;
+      text-align: left !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.03em !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0.98 !important;
+      white-space: nowrap !important;
+      transition: background 0.19s, color 0.19s;
+    }
+    .main-header nav a:active,
+    .main-header nav a:focus {
+      background: linear-gradient(90deg, #0090c5 25%, #22506e 100%) !important;
+      color: #fff !important;
+      opacity: 1 !important;
+    }
+    /* nav.open以外はタッチも効かない */
+  }
+  
+  /* nav.open以外、完全にはみ出して隠れるだけ display:none禁止 */
+  @media (max-width: 800px) {
+    .main-header nav:not(.open) {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateX(100%) !important;
+    }
+    .menu-toggle, .nav-toggle { display: flex !important; }
+  }
+  @media (min-width: 801px) {
+    .main-header nav {
+      display: flex !important;
+      position: static !important;
+      background: none !important;
+      width: auto !important;
+      max-width: none !important;
+      box-shadow: none !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 20px !important;
+      padding: 0 !important;
+      z-index: 1 !important;
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto !important;
+    }
+    .main-header nav a {
+      color: #e2f1ff !important;
+      padding: 8px 12px 5px 12px !important;
+      background: none !important;
+      font-size: 1.02rem !important;
+      border-radius: 5px 5px 0 0 !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      display: inline-block !important;
+      white-space: normal !important;
+      transition: color 0.3s, background 0.25s !important;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .main-header nav {
+      display: block !important;
+      position: fixed !important;
+      top: 0;
+      right: 0;
+      width: 82vw;
+      max-width: 340px;
+      height: 100vh;
+      background: rgba(30,40,60,0.98);
+      backdrop-filter: blur(8px) saturate(170%);
+      box-shadow: -14px 0 40px 0 rgba(0,0,0,0.22);
+      border-radius: 0 0 0 26px;
+      z-index: 999;
+      padding: 38px 20px 28px 22px;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+      transition:
+        transform 0.44s cubic-bezier(.36,.66,.04,1),
+        opacity 0.33s cubic-bezier(.36,.66,.04,1);
+    }
+    .main-header nav.open {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: translateX(0) !important;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .main-header nav {
+      display: block !important;
+      position: fixed !important;
+      top: 14px;
+      right: 14px;
+      /* 幅はお好みで */
+      min-width: 200px;
+      max-width: 85vw;
+      /* 高さは“auto”にして「中身分だけ」に */
+      height: auto;
+      background: rgba(30,40,60,0.97);
+      backdrop-filter: blur(8px) saturate(160%);
+      box-shadow: 0 8px 36px 0 rgba(0,0,0,0.24);
+      border-radius: 0 0 0 18px;
+      z-index: 999;
+      padding: 22px 18px 18px 18px;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(80px) scale(0.98);
+      transition:
+        transform 0.42s cubic-bezier(.36,.66,.04,1),
+        opacity 0.29s cubic-bezier(.36,.66,.04,1);
+    }
+    .main-header nav.open {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: translateX(0) scale(1) !important;
+    }
+    .main-header nav a {
+      color: #fff !important;
+      display: block !important;
+      font-size: 1.14rem !important;
+      background: none !important;
+      border-radius: 10px !important;
+      padding: 13px 12px 12px 18px !important;
+      margin: 0 0 7px 0 !important;
+      text-align: left !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.03em !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0.98 !important;
+      white-space: nowrap !important;
+      transition: background 0.18s, color 0.18s;
+    }
+    .main-header nav a:active,
+    .main-header nav a:focus {
+      background: linear-gradient(90deg, #0090c5 25%, #22506e 100%) !important;
+      color: #fff !important;
+      opacity: 1 !important;
+    }
+    .main-header nav a:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* ハンバーガーメニュー「超高級」カスタム */
+.nav-toggle.super-premium {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, #eef7fd 0%, #9fdaf7 100%);
+    box-shadow: 0 2px 12px 2px rgba(0,75,180,0.11), 0 1.5px 8px rgba(0,0,0,0.10);
+    border-radius: 14px;
+    border: none;
+    margin-left: auto;
+    margin-right: 2px;
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 130;
+    cursor: pointer;
+    transition: box-shadow 0.21s, background 0.21s, transform 0.12s;
+  }
+  .nav-toggle.super-premium:hover, .nav-toggle.super-premium:focus {
+    background: linear-gradient(135deg, #b9e3fa 0%, #6cc8f2 100%);
+    box-shadow: 0 7px 22px 4px rgba(0,75,180,0.13), 0 3px 18px rgba(0,0,0,0.12);
+    transform: scale(1.06) translateY(-2px);
+    outline: none;
+  }
+  .nav-toggle.super-premium:active {
+    background: linear-gradient(135deg, #93e1fa 0%, #2da8e8 100%);
+    box-shadow: 0 1.5px 8px rgba(0,0,0,0.13);
+    transform: scale(0.97);
+  }
+  
+  .nav-toggle.super-premium span {
+    width: 28px;
+    height: 4.5px;
+    background: linear-gradient(90deg, #0b95d8 40%, #1a3e58 100%);
+    margin: 4.2px 0;
+    border-radius: 2.5px;
+    transition: all 0.3s cubic-bezier(.5,1.6,.3,1.1);
+    box-shadow: 0 1px 5px rgba(0,90,200,0.13);
+    display: block;
+  }
+  
+  /* スマホ用 右上に固定 */
+  @media (max-width: 800px) {
+    .main-header {
+      position: relative;
+      z-index: 20;
+    }
+    .header-flex {
+      position: relative;
+    }
+    .nav-toggle.super-premium {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      margin: 0;
+      z-index: 131;
+    }
+  }
+  
+  /* メニューパネル：高級ミニマムパネル化 */
+  @media (max-width: 800px) {
+    .main-header nav {
+      /* もはや全画面でなく、メニュー項目分だけ自動高さ！ */
+      display: block !important;
+      position: fixed !important;
+      top: 64px;
+      right: 16px;
+      min-width: 210px;
+      max-width: 90vw;
+      background: linear-gradient(122deg, rgba(26,60,90,0.98) 80%, rgba(53,100,168,0.87) 100%);
+      box-shadow: 0 8px 36px 0 rgba(0,0,0,0.21);
+      border-radius: 14px;
+      z-index: 1200;
+      padding: 14px 16px 10px 10px;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-12px) scale(0.98);
+      transition:
+        opacity 0.28s cubic-bezier(.4,.9,.2,1.0),
+        transform 0.39s cubic-bezier(.4,.9,.2,1.2);
+      /* 高さは自動・overflowでメニュー項目だけに */
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .main-header nav.open {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: translateY(0) scale(1.0) !important;
+    }
+    .main-header nav a {
+      color: #fff !important;
+      display: block !important;
+      font-size: 1.19rem !important;
+      background: none !important;
+      border-radius: 8px !important;
+      padding: 13px 10px 11px 18px !important;
+      margin: 0 0 8px 0 !important;
+      text-align: left !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.03em !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      opacity: 0.98 !important;
+      white-space: nowrap !important;
+      transition: background 0.14s, color 0.17s;
+    }
+    .main-header nav a:active,
+    .main-header nav a:focus {
+      background: linear-gradient(90deg, #0090c5 30%, #22506e 100%) !important;
+      color: #fff !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  /* PCは従来通り */
+  @media (min-width: 801px) {
+    .nav-toggle.super-premium {
+      display: none !important;
+    }
+  }
+  
+/* スマホ時のヘッダー配置を上下型に */
+@media (max-width: 800px) {
+    .header-flex {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 7px 0 3px 8px;
+      min-height: unset;
+      position: relative;
+    }
+    .logo-area {
+      width: 100vw;
+      padding-right: 60px; /* ハンバーガーと重ならない */
+    }
+    .logo-main {
+      font-size: clamp(1.06rem, 3.4vw, 1.25rem);
+      max-width: 82vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .logo-sub {
+      font-size: clamp(0.8rem, 2.4vw, 0.97rem);
+      max-width: 82vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .nav-toggle.super-premium {
+      position: absolute;
+      top: 10px;
+      right: 11px;
+      z-index: 130;
+    }
+  }
+  
+  /* 超スマホ幅では会社名が二行になるのを防ぐ */
+  @media (max-width: 400px) {
+    .logo-main, .logo-sub {
+      max-width: 64vw;
+      font-size: 1.01rem;
+    }
+  }
+  .hidden-surfer {
+    position: fixed;
+    right: 20px;
+    bottom: 16px;
+    width: 70px;
+    height: auto;
+    opacity: 0.24;
+    z-index: 40;
+    pointer-events: none;
+    animation: surferfloat 4s ease-in-out infinite;
+    transition: opacity 0.24s;
+  }
+  .hidden-surfer:hover { opacity: 0.6; }
+  .hidden-surfer img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 13px #24d5f488);
+  }
+  @keyframes surferfloat {
+    0%, 100% { transform: translateY(0);}
+    17% { transform: translateY(-10px);}
+    44% { transform: translateY(-18px);}
+    80% { transform: translateY(5px);}
+  }
+  @media (max-width: 700px) {
+    .hidden-surfer { width: 38px; right: 2vw; bottom: 9vw; }
+  }
+      
