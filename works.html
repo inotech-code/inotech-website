@@ -6,23 +6,114 @@
   <title>施工事例 | 株式会社Inotech</title>
   <meta name="description" content="株式会社Inotechが手掛けたエアコン設置・洗浄・電気工事などの施工事例を豊富な実績写真・詳細解説付きでご紹介します。">
   <link href="css/styles.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #f7fcff 0%, #e2f2fa 80%, #f6faff 100%);
+    }
+    .works-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 38px;
+      margin-top: 44px;
+      margin-bottom: 8px;
+      padding: 0;
+    }
+    @media (max-width: 900px) {
+      .works-list { grid-template-columns: 1fr; gap: 20px 0; }
+    }
+    .work-item {
+      background: linear-gradient(135deg, #fafdff 95%, #e3eef8 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 18px 0 rgba(16,82,146,0.10), 0 1.5px 8px rgba(32,90,140,0.08);
+      padding: 0 0 17px 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.23s, transform 0.18s;
+      animation: fadeIn 0.62s;
+    }
+    .work-item:hover {
+      box-shadow: 0 11px 34px 0 rgba(16,82,146,0.14), 0 3px 16px rgba(32,90,140,0.09);
+      transform: translateY(-3px) scale(1.012);
+    }
+    .work-item img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 18px 18px 0 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      background: #e3eef8;
+    }
+    @media (max-width: 600px) {
+      .work-item img { height: 115px; border-radius: 16px 16px 0 0; }
+      .work-item { border-radius: 13px; }
+    }
+    .work-item > div {
+      padding: 21px 20px 9px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .work-item h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #186bb2;
+      margin-bottom: 7px;
+      margin-top: 0;
+      line-height: 1.43;
+      letter-spacing: 0.02em;
+    }
+    .work-item p {
+      font-size: 1.03rem;
+      color: #2a486c;
+      margin-bottom: 10px;
+      margin-top: 0;
+      line-height: 1.64;
+      letter-spacing: 0.01em;
+    }
+    .work-item ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.99em;
+      color: #125687;
+    }
+    .work-item li {
+      margin-bottom: 3px;
+      line-height: 1.42;
+      letter-spacing: 0.01em;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(24px) scale(0.97);}
+      100% { opacity: 1; transform: none;}
+    }
+  </style>
 </head>
 <body>
 
-
-<header>
-  <div class="container">
-    <h1 class="logo">株式会社Inotech</h1>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="about.html">会社概要</a>
-      <a href="services.html">サービス内容</a>
-      <a href="reviews.html">お客様の声</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
+    <header class="main-header">
+        <div class="container header-flex">
+          <div class="logo-area">
+            <span class="logo-mark">INO</span>
+            <div class="logo-text">
+              <span class="logo-main">株式会社Inotech</span>
+              <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
+            </div>
+          </div>
+          <button class="nav-toggle super-premium" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
+          <nav id="mainNav">
+            <a href="index.html">トップ</a>
+            <a href="about.html">会社概要</a>
+            <a href="services.html">サービス内容</a>
+            <a href="reviews.html">お客様の声</a>
+            <a href="blog.html">ブログ</a>
+            <a href="contact.html">お問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+      
 
 <section class="section">
   <div class="container">
@@ -43,7 +134,7 @@
           </ul>
         </div>
       </div>
-
+      <!-- ...（2件目以降も同じまま） ... -->
       <!-- 2件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="飲食店・エアコン洗浄">
@@ -58,7 +149,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 3件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="戸建住宅・電気配線リニューアル">
@@ -73,7 +163,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 4件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=600&q=80" alt="小学校・教室エアコン一斉導入">
@@ -88,7 +177,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 5件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=600&q=80" alt="高齢者施設・LAN配線新設">
@@ -103,7 +191,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 6件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="工場・業務用エアコン更新">
@@ -118,7 +205,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 7件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=600&q=80" alt="マンション・エアコン一斉入替え">
@@ -133,7 +219,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 8件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1507662228758-08d030c4820d?auto=format&fit=crop&w=600&q=80" alt="学習塾・空調リニューアル">
@@ -148,7 +233,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 9件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=600&q=80" alt="医療クリニック・電気設備工事">
@@ -163,7 +247,6 @@
           </ul>
         </div>
       </div>
-
       <!-- 10件目 -->
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1488805990569-3c9e1d76d51c?auto=format&fit=crop&w=600&q=80" alt="住宅・おしゃれリビングへのエアコン設置">
@@ -178,7 +261,6 @@
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -186,6 +268,21 @@
 <footer>
   <p>© 2025 株式会社Inotech All Rights Reserved.</p>
 </footer>
+
+<script>
+    // ハンバーガーメニュー開閉
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+    // メニュークリックで自動的に閉じる
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+      });
+    });
+</script>
 
 </body>
 </html>
