@@ -6,22 +6,121 @@
   <title>サービス内容 | 株式会社Inotech</title>
   <meta name="description" content="エアコン設置・洗浄・電気工事・LAN工事など、株式会社Inotechが提供する幅広いサービスをご紹介。">
   <link href="css/styles.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #f7fcff 0%, #e2f2fa 80%, #f6faff 100%);
+    }
+    .services-detail-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 40px;
+      margin: 36px 0 4px 0;
+      padding: 0;
+    }
+    @media (max-width: 900px) {
+      .services-detail-list {
+        grid-template-columns: 1fr;
+        gap: 22px 0;
+      }
+    }
+    .service-detail {
+      background: linear-gradient(135deg, #fafdff 92%, #e3eef8 100%);
+      border-radius: 17px;
+      box-shadow: 0 4px 18px 0 rgba(22,88,150,0.10), 0 1.5px 8px rgba(30,90,140,0.07);
+      padding: 0 0 18px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 230px;
+      transition: box-shadow 0.22s, transform 0.18s;
+      animation: fadeIn 0.67s;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-detail:hover {
+      box-shadow: 0 10px 30px 0 rgba(22,88,150,0.14), 0 3px 16px rgba(30,90,140,0.10);
+      transform: translateY(-3px) scale(1.012);
+    }
+    .service-img-lg {
+      width: 100%;
+      height: 156px;
+      object-fit: cover;
+      border-radius: 17px 17px 0 0;
+      background: #e3eef8;
+      margin-bottom: 0;
+      box-shadow: none;
+    }
+    @media (max-width: 600px) {
+      .service-img-lg { height: 98px; border-radius: 13px 13px 0 0; }
+      .service-detail { border-radius: 11px; }
+    }
+    .service-detail h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1b6cc2;
+      margin-bottom: 7px;
+      margin-top: 17px;
+      line-height: 1.42;
+      letter-spacing: 0.02em;
+      text-align: left;
+      width: 100%;
+      padding-left: 19px;
+    }
+    .service-detail p {
+      font-size: 1.03rem;
+      color: #29486c;
+      margin-bottom: 10px;
+      margin-top: 0;
+      line-height: 1.68;
+      letter-spacing: 0.01em;
+      width: 100%;
+      padding-left: 19px;
+      padding-right: 10px;
+      text-align: left;
+    }
+    .service-detail ul {
+      padding-left: 34px;
+      margin: 0 0 0 0;
+      font-size: 0.99em;
+      color: #1765a0;
+      text-align: left;
+      width: 100%;
+    }
+    .service-detail li {
+      margin-bottom: 3px;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(18px) scale(0.97);}
+      100% { opacity: 1; transform: none;}
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1 class="logo">株式会社Inotech</h1>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="about.html">会社概要</a>
-      <a href="works.html">施工事例</a>
-      <a href="reviews.html">お客様の声</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
-
+    <header class="main-header">
+        <div class="container header-flex">
+          <div class="logo-area">
+            <span class="logo-mark">INO</span>
+            <div class="logo-text">
+              <span class="logo-main">株式会社Inotech</span>
+              <span class="logo-sub">空調・電気・消防設備のプロフェッショナル</span>
+            </div>
+          </div>
+          <button class="nav-toggle super-premium" id="navToggle" aria-label="メニューを開く">
+            <span></span><span></span><span></span>
+          </button>
+          <nav id="mainNav">
+            <a href="index.html">トップ</a>
+            <a href="about.html">会社概要</a>
+            <a href="works.html">施工事例</a>
+            <a href="reviews.html">お客様の声</a>
+            <a href="blog.html">ブログ</a>
+            <a href="contact.html">お問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+      
 
 <section class="section">
   <div class="container">
@@ -103,5 +202,21 @@
 <footer>
   <p>© 2025 株式会社Inotech All Rights Reserved.</p>
 </footer>
+
+<script>
+    // ハンバーガーメニュー開閉
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+    // メニュークリックで自動的に閉じる
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+      });
+    });
+</script>
+
 </body>
 </html>
