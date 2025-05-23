@@ -1325,3 +1325,72 @@ footer {
     .hidden-surfer { width: 38px; right: 2vw; bottom: 9vw; }
   }
       
+  .main-header {
+    height: 72px; /* ヘッダー全体を高く（例: 72px。好みに応じてさらに調整可） */
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-area {
+    display: flex;
+    align-items: center;
+    height: 100%;         /* 親の高さに合わせる */
+  }
+  
+  .header-logo-img {
+    height: 56px;         /* ← ロゴを大きく（例: 56pxにUP。お好みで64pxも可） */
+    width: auto;
+    margin-right: 18px;   /* テキストとの余白調整 */
+    display: block;
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    height: 80px; /* ヘッダーと揃える */
+  }
+  
+  .header-logo-img {
+    height: 56px;
+    width: auto;
+    margin-right: 18px;
+    display: block;
+    vertical-align: middle;
+    position: relative;
+    top: 10px;   /* ← ここで下方向に微調整（必要なら値を増減） */
+  }
+  .header-flex {
+    padding-left: 0 !important;
+    padding-right: 20px; /* 右側は残す場合 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-area {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* ヘッダー専用でcontainerの幅制限や余白を解除 */
+.main-header > .container {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-flex {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-area {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    position: relative;
+    left: 0;
+    /* 念のため、box-sizing指定も */
+    box-sizing: border-box;
+  }
+    
