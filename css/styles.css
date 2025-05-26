@@ -1394,3 +1394,579 @@ footer {
     box-sizing: border-box;
   }
     
+  .hero-btn {
+    display: inline-block;
+    min-width: 180px;
+    text-align: center;
+    font-size: 1.08em;
+    padding: 13px 0;
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    margin: 0 6px 12px 0;
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    letter-spacing: 0.02em;
+  }
+  .hero-btn:last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 670px) {
+    .modern-hero-overlay {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modern-hero-title, .modern-hero-desc {
+      text-align: center;
+    }
+    .hero-btn {
+      width: 100%;
+      margin: 0 0 12px 0;
+      min-width: 0;
+    }
+    .modern-hero-overlay > div[style*="display:flex"] {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0 !important;
+    }
+  }
+/* --- ヒーローCTAボタン共通 --- */
+.hero-btn {
+    display: inline-block;
+    min-width: 200px;
+    max-width: 100%;
+    text-align: center;
+    font-size: 1.08em;
+    padding: 13px 0;
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    margin: 0 12px 0 0;
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    line-height: 1.2;
+  }
+  .hero-btn:last-child {
+    margin-right: 0;
+  }
+  
+  /* --- ボタン親のflex設定 --- */
+  .hero-btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+    flex-wrap: nowrap;
+  }
+  
+  /* --- スマホは縦並びに切り替え --- */
+  @media (max-width: 670px) {
+    .hero-btn-row {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .hero-btn {
+      width: 100%;
+      min-width: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  .hero-btn {
+    display: inline-block;
+    min-width: 240px;
+    max-width: 100%;
+    text-align: center;
+    font-size: 1.09em;
+    padding: 15px 0 14px 0;
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    margin: 0 12px 0 0;
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    line-height: 1.2;
+    white-space: nowrap; /* ←折り返し防止 */
+  }
+  .hero-btn:last-child {
+    margin-right: 0;
+  }
+      
+  .modern-hero-overlay {
+    max-width: 620px;        /* 例:元より少し広げる */
+    margin: 0 auto;
+    padding: 36px 32px 32px 32px;
+    background: rgba(20, 40, 80, 0.82);
+    border-radius: 32px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow: hidden; ←追加しておくと完全にはみ出し防止 */
+    overflow: hidden;
+  }
+  
+  .hero-btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+    flex-wrap: wrap;  /* ←ここで折り返しOK */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* ボタン最小幅を微調整（例: 220px くらいに） */
+  .hero-btn {
+    min-width: 220px;
+    max-width: 100%;
+    /* 既存のpaddingやmarginはそのまま */
+  }
+  
+  /* スマホではパディング/幅なども調整 */
+  @media (max-width: 670px) {
+    .modern-hero-overlay {
+      max-width: 96vw;
+      padding: 26px 7vw 22px 7vw;
+    }
+    .hero-btn-row {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .hero-btn {
+      width: 100%;
+      min-width: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  .modern-hero-overlay {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 36px 48px 32px 48px;  /* ←左右を拡大 */
+    background: rgba(20, 40, 80, 0.82);
+    border-radius: 32px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    width: auto;    /* ←ここをautoで中央に */
+    box-sizing: border-box;
+  }
+  .hero-btn {
+    min-width: 220px;   /* ←バランス良い幅 */
+    max-width: 100%;
+    font-size: 1.09em;
+    padding: 15px 0 14px 0;
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    margin: 0 12px 0 0;
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .hero-btn:last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 670px) {
+    .modern-hero-overlay {
+      max-width: 96vw;
+      padding: 26px 7vw 22px 7vw;
+    }
+    .hero-btn-row {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+      width: 100%;
+    }
+    .hero-btn {
+      width: 100%;
+      min-width: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  .hero-btn {
+    min-width: 260px;       /* ←ここを広めに！ */
+    max-width: 100%;
+    font-size: 1.09em;
+    padding: 15px 24px;     /* ←左右の余白を広めに */
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    margin: 0 12px 0 0;
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .hero-btn:last-child {
+    margin-right: 0;
+  }
+  .hero-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px 24px; /* 行間・列間 */
+    margin-top: 18px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* ボタンはすべて完全同じ幅 */
+  .hero-btn {
+    width: 260px;
+    min-width: unset;
+    max-width: 100%;
+    font-size: 1.09em;
+    padding: 15px 0;
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    margin: 0;
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  
+  /* スマホは全幅縦並び */
+  @media (max-width: 670px) {
+    .hero-btn-row {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .hero-btn {
+      width: 100%;
+    }
+  }
+  .feature-icon {
+    font-size: 2.4em;
+    margin-bottom: 16px;
+    display: block;
+    text-align: center;
+  }
+  .features-grid .feature {
+    text-align: center;
+  }
+  .service-icon {
+    font-size: 2.1em;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .services-grid .service {
+    text-align: center;
+    position: relative;
+  }
+  .service-img {
+    border-radius: 13px;
+    margin-bottom: 8px;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+    width: 100%;
+    max-width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-sm {
+    margin-top: 8px;
+    min-width: 120px;
+    font-size: 1em;
+    padding: 11px 0;
+    border-radius: 24px;
+  }
+  .works-pickup {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .work-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(30,50,80,0.08);
+    padding: 18px 18px 14px 18px;
+    max-width: 350px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .work-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 1.5px 8px rgba(30,50,80,0.07);
+  }
+  .btn-lg {
+    font-size: 1.07em;
+    padding: 14px 38px;
+    border-radius: 28px;
+    background: #06c755;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 12px rgba(30,80,60,0.07);
+    display: inline-block;
+  }
+  .work-item h3 {
+    min-height: 2.4em; /* タイトル高さを統一（2行分） */
+    font-size: 1.09em;
+    margin-bottom: 6px;
+    text-align: center;
+    line-height: 1.32;
+    font-weight: 600;
+    color: #222;
+  }
+  .work-item p {
+    font-size: 0.99em;
+    line-height: 1.58;
+    margin-bottom: 6px;
+    text-align: left;
+    min-height: 90px; /* 事例本文高さを揃える（要調整） */
+  }
+  .work-item strong {
+    font-weight: bold;
+    color: #01a0e9;
+  }
+  .work-item .customer-voice {
+    display: block;
+    color: #06c755;
+    font-weight: 500;
+    font-size: 0.98em;
+    margin-top: 7px;
+    text-align: left;
+  }
+  @media (max-width: 670px) {
+    .work-item h3, .work-item p {
+      min-height: unset;
+    }
+  }
+  .work-item h3, .work-item .case-title {
+    min-height: 2.4em;
+    font-size: 1.08em;
+    margin-bottom: 6px;
+    text-align: center;
+    font-weight: 700;
+    color: #0087cc;
+    line-height: 1.34;
+  }
+  
+  .case-title {
+    display: block;
+    font-size: 1.11em;
+    font-weight: 700;
+    color: #0087cc;
+    margin-bottom: 7px;
+    text-align: center;
+  }
+  
+  .work-item p {
+    font-size: 1.03em;
+    line-height: 1.62;
+    margin-bottom: 7px;
+    text-align: left;
+    min-height: 90px;
+  }
+  
+  .work-item strong {
+    color: #00A0E9;
+    font-weight: 700;
+    margin-right: 3px;
+  }
+  
+  .customer-voice {
+    display: block;
+    color: #06c755;
+    font-weight: 500;
+    font-size: 1.01em;
+    margin-top: 9px;
+    text-align: left;
+    padding-left: 12px;
+    position: relative;
+  }
+  
+  .customer-voice::before {
+    content: "“";
+    font-size: 1.3em;
+    color: #06c755;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .review-initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.38em;
+    margin-right: 14px;
+    margin-bottom: 9px;
+    box-shadow: 0 2px 8px rgba(30,50,80,0.09);
+    flex-shrink: 0;
+    letter-spacing: 1px;
+  }
+  .reviews-pickup {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .review-item {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(30,50,80,0.08);
+    padding: 22px 24px 18px 24px;
+    max-width: 370px;
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .review-item h3 {
+    font-size: 1.09em;
+    font-weight: 700;
+    color: #0077b6;
+    margin-bottom: 7px;
+    margin-top: 0;
+  }
+  .review-item p {
+    font-size: 1.01em;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .reviewer {
+    font-size: 0.93em;
+    color: #555;
+    margin-left: 3px;
+  }
+  .faq-list {
+    margin: 0 auto;
+    padding: 0;
+  }
+  .faq-item {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e3e8ef;
+    padding-bottom: 5px;
+  }
+  .faq-item dt {
+    font-weight: 600;
+    font-size: 1.07em;
+    cursor: pointer;
+    color: #0077b6;
+    margin-bottom: 5px;
+    transition: color 0.18s;
+    position: relative;
+    padding-left: 28px;
+  }
+  .faq-item dt::before {
+    content: "❓";
+    position: absolute;
+    left: 0;
+    font-size: 1em;
+  }
+  .faq-item dt.open {
+    color: #06c755;
+  }
+  .faq-item dd {
+    font-size: 1.02em;
+    color: #222;
+    padding: 0 0 0 8px;
+    line-height: 1.7;
+    margin: 0;
+    display: none;
+    transition: all 0.18s;
+  }
+  .faq-item dd.open {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 3px;
+  }
+  .faq-item dt i {
+    color: #00a0e9;
+    font-size: 1.13em;
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+  .faq-item dt::before {
+    content: none; /* 旧❓を消す */
+  }
+  
+  .faq-item dt {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.09em;
+    cursor: pointer;
+    color: #0077b6;
+    margin-bottom: 5px;
+    transition: color 0.18s;
+    padding: 12px 0 12px 0;
+    border-radius: 7px;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  .faq-item dt i {
+    color: #00a0e9;
+    font-size: 1.16em;
+    margin-right: 10px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+  }
+  .btn-faq {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 1.07em;
+    padding: 16px 42px;
+    border-radius: 28px;
+    font-weight: 700;
+    margin: 38px auto 0 auto;
+    box-shadow: 0 2px 12px rgba(30,50,80,0.07);
+    border: none;
+    transition: background 0.15s;
+    text-align: center;
+  }
+  .btn-faq:hover {
+    background: #0077b6;
+  }
+  
