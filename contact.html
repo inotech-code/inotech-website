@@ -8,97 +8,116 @@
   <link href="css/styles.css" rel="stylesheet">
   <style>
     /* ===== 共通背景グラデーション ===== */
-    body {
-      background: linear-gradient(120deg, #f7fcff 0%, #e2f2fa 80%, #f6faff 100%);
+    body{
+      background:linear-gradient(120deg,#f7fcff 0%,#e2f2fa 80%,#f6faff 100%);
+    }
+
+    /* ===== ナビゲーション（幅固定解除＋中央揃え） ===== */
+    .main-header #mainNav{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      flex-wrap:nowrap;
+    }
+    .main-header #mainNav a{
+      white-space:nowrap;
+      line-height:1;
+      font-size:0.96rem;
+      width:auto !important;
+      padding:14px 0;
+      display:block;
+    }
+    @media(max-width:900px){
+      .main-header #mainNav{
+        display:none;
+        flex-direction:column;
+        align-items:flex-end;
+        gap:18px;
+        background:#005c92;
+        padding:18px 24px;
+        position:absolute;
+        top:100%;
+        right:0;
+        border-radius:0 0 8px 8px;
+        z-index:10;
+      }
+      .main-header #mainNav.open{display:flex;}
     }
 
     /* ===== カード ===== */
-    .contact-card {
-      background: linear-gradient(135deg, #fafdff 80%, #e9f3fc 100%);
-      border-radius: 18px;
-      box-shadow: 0 6px 32px 0 rgba(14,85,130,0.09), 0 1.5px 8px rgba(32,90,140,0.06);
-      padding: 38px 32px 28px 32px;
-      max-width: 480px;
-      margin: 0 auto 28px auto;
-      border: 1.5px solid #e6f1fa;
-      position: relative;
-      z-index: 1;
-      animation: fadeIn 0.7s;
-      text-align: center;
+    .contact-card{
+      background:linear-gradient(135deg,#fafdff 80%,#e9f3fc 100%);
+      border-radius:18px;
+      box-shadow:0 6px 32px rgba(14,85,130,.09),0 1.5px 8px rgba(32,90,140,.06);
+      padding:38px 32px 28px;
+      max-width:480px;
+      margin:0 auto 28px;
+      border:1.5px solid #e6f1fa;
+      animation:fadeIn .7s;
+      text-align:center;
     }
-    @media (max-width: 600px) {
-      .contact-card { padding: 28px 6vw 22px 6vw; }
+    @media(max-width:600px){
+      .contact-card{padding:28px 6vw 22px;}
     }
 
-    /* ===== LINE ボタン ===== */
-    .line-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 360px;
-      margin: 16px auto 10px auto;
-      background: #06C755;               /* LINE Brand Color */
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      padding: 15px 0;
-      border-radius: 38px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 18px rgba(6,199,85,0.20);
-      transition: background 0.25s, transform 0.12s, box-shadow 0.25s;
-      text-decoration: none;
+    /* ===== LINE ボタン（アイコン無し・テキスト中央） ===== */
+    .line-btn{
+      display:inline-block;          /* テキストのみなので block で中央寄せ */
+      background:#06C755;
+      color:#fff;
+      font-size:1.15rem;
+      font-weight:700;
+      letter-spacing:.05em;
+      padding:15px 40px;             /* 左右を余裕持って確保 */
+      border:none;
+      border-radius:38px;
+      cursor:pointer;
+      box-shadow:0 4px 18px rgba(6,199,85,.20);
+      transition:.25s;
+      text-decoration:none;
     }
     .line-btn:hover,
-    .line-btn:focus {
-      background: #04b14c;
-      transform: translateY(-2px) scale(1.04);
-      box-shadow: 0 8px 28px rgba(6,199,85,0.30);
-      outline: none;
-      color: #fff;
-    }
-    .line-btn img {
-      width: 24px;
-      height: 24px;
-      margin-right: 9px;
+    .line-btn:focus{
+      background:#04b14c;
+      transform:translateY(-2px) scale(1.04);
+      box-shadow:0 8px 28px rgba(6,199,85,.30);
+      outline:none;
     }
 
-    /* ===== QRコードと案内文 ===== */
-    .line-qr {
-      margin: 18px auto 4px auto;
-      width: 160px;
-      height: 160px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,80,120,0.10);
-      background: #fff;
-      object-fit: contain;
-    }
-    .contact-note {
-      text-align: center;
-      font-size: 1.03em;
-      color: #3486bb;
-      margin-top: 18px;
-      background: #f6fbff;
-      border-radius: 8px;
-      padding: 11px 12px;
-      box-shadow: 0 1.5px 5px rgba(32,120,180,0.07);
-      border: 1px solid #e4f1fa;
-      max-width: 430px;
-      margin-left: auto;
-      margin-right: auto;
+    /* ===== QRコード ===== */
+    .line-qr{
+      margin:18px auto 4px;
+      width:160px;
+      height:160px;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,80,120,.10);
+      background:#fff;
+      object-fit:contain;
     }
 
-    /* ===== アニメーション ===== */
-    @keyframes fadeIn {
-      0%   { opacity: 0; transform: translateY(25px) scale(0.98); }
-      100% { opacity: 1; transform: none; }
+    .contact-note{
+      text-align:center;
+      font-size:1.03em;
+      color:#3486bb;
+      margin-top:18px;
+      background:#f6fbff;
+      border-radius:8px;
+      padding:11px 12px;
+      box-shadow:0 1.5px 5px rgba(32,120,180,.07);
+      border:1px solid #e4f1fa;
+      max-width:430px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    @keyframes fadeIn{
+      0%{opacity:0;transform:translateY(25px) scale(.98);}
+      100%{opacity:1;transform:none;}
     }
   </style>
 </head>
 <body>
-  <!-- ======== ヘッダー ======== -->
+  <!-- ===== ヘッダー ===== -->
   <header class="main-header">
     <div class="container header-flex">
       <div class="logo-area">
@@ -123,23 +142,22 @@
     </div>
   </header>
 
-  <!-- ======== メインセクション ======== -->
+  <!-- ===== メイン ===== -->
   <section class="section">
     <div class="container">
       <h2>LINEでお問い合わせ</h2>
 
       <div class="contact-card">
-        <p style="font-size:1.05rem; line-height:1.6; margin-bottom:8px;">
+        <p style="font-size:1.05rem;line-height:1.6;margin-bottom:8px;">
           友だち追加後、トークで<br>
           <strong style="color:#06C755;">「お名前・ご用件」</strong>をお送りください。
         </p>
 
-        <!-- LINE 公式アカウントに遷移するボタン -->
+        <!-- アイコンなし・テキストのみボタン -->
         <a href="https://lin.ee/Vg3bvMR" target="_blank" rel="noopener" class="line-btn">
-          <img src="images/line_icon.png" alt="LINEアイコン"> LINEで問い合わせる
+          LINEで問い合わせる
         </a>
 
-        <!-- QRコード表示 -->
         <img src="images/line_qr.png" alt="LINE QRコード" class="line-qr">
       </div>
 
@@ -149,23 +167,16 @@
     </div>
   </section>
 
-  <!-- ======== フッター ======== -->
-  <footer>
-    <p>© 2025 株式会社Inotech All Rights Reserved.</p>
-  </footer>
+  <!-- ===== フッター ===== -->
+  <footer><p>© 2025 株式会社Inotech All Rights Reserved.</p></footer>
 
-  <!-- ======== JS: ハンバーガーメニュー ======== -->
+  <!-- ===== JS ===== -->
   <script>
     const navToggle = document.getElementById('navToggle');
     const mainNav   = document.getElementById('mainNav');
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('open');
-    });
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-      });
-    });
+    navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+    mainNav.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => mainNav.classList.remove('open')));
   </script>
 </body>
 </html>
